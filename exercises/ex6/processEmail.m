@@ -6,22 +6,10 @@ function word_indices = processEmail(email_contents)
 %   words contained in the email. 
 %
 
-% Load Vocabulary
 vocabList = getVocabList();
 
-% Init return value
 word_indices = [];
 
-% ========================== Preprocess Email ===========================
-
-% Find the Headers ( \n\n and remove )
-% Uncomment the following lines if you are working with raw emails with the
-% full headers
-
-% hdrstart = strfind(email_contents, ([char(10) char(10)]));
-% email_contents = email_contents(hdrstart(1):end);
-
-% Lower case
 email_contents = lower(email_contents);
 
 % Strip all HTML
@@ -90,12 +78,6 @@ while ~isempty(email_contents)
     %               'action', then, you should add 18 to the word_indices 
     %               vector (e.g., word_indices = [word_indices ; 18]; ).
     % 
-    % Note: vocabList{idx} returns a the word with index idx in the
-    %       vocabulary list.
-    % 
-    % Note: You can use strcmp(str1, str2) to compare two strings (str1 and
-    %       str2). It will return 1 only if the two strings are equivalent.
-    %
 
     for i = 1:length(vocabList)
         vocabword = vocabList{i};

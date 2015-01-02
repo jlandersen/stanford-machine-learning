@@ -8,7 +8,6 @@ function plotDecisionBoundary(theta, X, y)
 %      intercept.
 %   2) MxN, N>3 matrix, where the first column is all-ones
 
-% Plot Data
 plotData(X(:,2:3), y);
 hold on
 
@@ -39,8 +38,6 @@ else
     end
     z = z'; % important to transpose z before calling contour
 
-    % Plot z = 0
-    % Notice you need to specify the range [0, 0]
     contour(u, v, z, [0, 0], 'LineWidth', 2)
 end
 hold off
